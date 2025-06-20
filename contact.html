@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #a45068;
+    }
+
+    .contact-container {
+      background: #6a5fa1;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+     
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4e89ff;
+    }
+
+    label {
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      background: #fff;
+      font-size: 14px;
+      color: #666;
+      padding: 0 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #4e89ff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #3c6edb;
+    }
+
+    #responseMessage {
+      margin-top: 15px;
+      text-align: center;
+      color: green;
+    }
+
+    #verifiedBox {
+      margin-top: 15px;
+      font-size: 18px;
+      color: green;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #verifiedBox.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .hidden {
+      display: none;
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label for="name">Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="subject" required>
+        <label for="subject">Subject</label>
+      </div>
+
+      <div class="input-group">
+        <textarea id="message" rows="5" required></textarea>
+        <label for="message">Message</label>
+      </div>
+
+      <button type="submit">Send Message</button>
+      
+      <p id="responseMessage"></p>
+      
+      <div id="verifiedBox" class="hidden">✅ Verified</div>
+      
+    </form>
+    <a href="https://www.facebook.com"><img src="face.jpg" alt="logo-face"></a>
+      <a href="https://www.instagram.com"><img src="insta.jpg" alt="ig-logo"></a>
+      <a href="https://www.x.com"><img src="x.jpg" alt="x-logo"></a>
+      <a href="https://www.whatsapp.com"><img src="WhatsApp.png" alt="wat-logo"></a>
+     <a href="https://www.youtube.com"><img src="youtube.jpg" alt="face-logo"></a>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const responseMessage = document.getElementById('responseMessage');
+      const verifiedBox = document.getElementById('verifiedBox');
+
+      if (!name || !email || !subject || !message) {
+        responseMessage.style.color = 'red';
+        responseMessage.textContent = 'Please fill out all fields.';
+        verifiedBox.classList.remove('show');
+        verifiedBox.classList.add('hidden');
+        return;
+      }
+
+      responseMessage.style.color = 'green';
+      responseMessage.textContent = 'Message sent successfully!';
+
+      verifiedBox.classList.remove('hidden');
+      setTimeout(() => {
+        verifiedBox.classList.add('show');
+      }, 50);
+
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+
