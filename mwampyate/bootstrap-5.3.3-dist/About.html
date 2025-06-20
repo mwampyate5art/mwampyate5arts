@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Kifaru Security</title>
+  <style>
+      nav a:hover{
+        background-color: rgb(97, 207, 57);
+
+    }
+    
+nav a {
+  color: rgb(11, 129, 193);
+  margin-right: 15px;
+  text-decoration: none;
+  padding: 6px;
+  text-align: center;
+  align-items: block;
+}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      color: #f1c095;
+    }
+
+    header {
+      background-color: #459071;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+      nav a{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 16px;
+      }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+        padding: 10px 15px;
+      text-decoration: none;
+      
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px white;
+    }
+
+    h2 {
+      color: #bdfcf4;
+    }
+
+    .about-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <H1>MWAMPYATE DRAWING ACADEMY</H1>
+    <nav>
+      <div id="navbar"></div>
+        <script>
+          fetch('navbar.html')
+          .then(res=>res.text())
+          .then (data=>){
+            document.getElementById('navbar').innerHTML=data
+          }
+        </script>
+  </header>
+
+  <nav>
+
+    <a href="Atc.html">home</a>
+    <a href="table.html">about</a>
+    <a href="About.html">Services</a>
+    <a href="contact page.html">contact</a>
+  </nav>
+  <div class="container">
+    <img src="images (8).jpeg" alt="Security Team" class="about-image" />
+    
+    <h2>About Us</h2>
+    <p><strong>Mwampyate drawing academy</strong> is a professional  teaching academy in our world so it help you to draw very well in realist potrait in the world and to make sure you chage and to become perfect one.</p>
+    
+    <h2>Our Mission</h2>
+    <p>To be the most trusted and very powerfull skills  in Tanzania.</p>
+
+    <h2>Our Values</h2>
+    <ul>
+      <li>Integrity</li>
+      <li>Discipline</li>
+      <li>Professionalism</li>
+      <li>Client Satisfaction</li>
+    </ul>
+
+    <h2>Why Choose Us?</h2>
+    <p>We combine experience, cutting-edge skills, and a dedicated team to deliver what you expert in all arts life.</p>
+  </div>
+</body>
+</html>
